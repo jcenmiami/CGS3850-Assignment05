@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Assignment 05 - CGS3850</title>
+<link rel="stylesheet" href="style.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		// Show Effect to display the matched elements. Uses default duration. 
+		$("#show").click(function() {
+			$("#effects").show("normal");
+		});
+		// Hide Effect to hide the matched elements. Contains a duration and 
+		// and easing effect.
+		$("#hide").click(function() {
+			$("#effects").hide(1000,"swing");
+		});
+		// Toggle displays or hides the matched elements. Takes a slow parameter
+		// calls the completion function. 
+		$("#toggle").click(function() {
+			$("#effects").toggle("slow", completion);
+		});
+		// Fade in effect to display the matched elements by fading them to opaque.
+		$("#fadein").click(function() {
+			$("#effects").fadeIn("normal");
+		});
+		// Fade out effect to hide the matched elements by fading them to transparent
+		$("#fadeout").click(function() {
+			$("#effects").fadeOut("normal");
+		});
+		// Fade to effect to adjust the opacity of the matched elements.
+		// It has a duration and opacity.
+		$("#fadeto3").click(function() {
+			$("#effects").fadeTo("slow",0.5);
+		});
+		// Fade to effect to adjust the opacity of the matched elements.
+		// It has a duration and opacity (100%).
+		$("#fadeup").click(function() {
+			$("#effects").fadeTo("slow",1.0);
+		});
+		// Sliding effect to hide the matched elements with a sliding motion.
+		// Takes a duration parameter. 
+		$("#slideup").click(function() {
+			$("#effects").slideUp(1000);
+		});
+		// Sliding effect to display the matched elements with a sliding motion.
+		// Takes a duration parameter. 
+		$("#slidedown").click(function() {
+			$("#effects").slideDown(2000);
+		});
+		// Animate effect to perform a custom animation of a set of CSS properties.
+		// Once clicked the box's width increases to 400px and has a duration parameter.
+		$("#right").click(function() {
+			$("#effects").animate({width:"400px"},1000);
+		});
+		// Animate effect to perform a custom animation of a set of CSS properties.
+		// Once clicked the box's width decreases to 200px and has a duration parameter.
+		$("#left").click(function() {
+			$("#effects").animate({width:"200px"},1000);
+		});
+	});
+	// Function that displays text in the element. 
+	function completion() {
+		$(this).text("CGS3850");
+	}
+</script>
+
+</head>
+<body>
+
+	<div id="effects" class="box">
+	</div>
+	
+	<button id="show">Show</button>
+	<button id="hide">Hide</button>
+	<button id="toggle">Toggle</button>
+	<button id="fadein">Fade In</button>
+	<button id="fadeout">Fade Out</button>
+	<button id="fadeto3">Fade To 50%</button>
+	<button id="fadeup">Fade To 100%</button>
+	<button id="slideup">Slide Up</button>
+	<button id="slidedown">Slide Down</button>
+	<button id="right">Animate Grow Right</button>
+	<button id="left">Animate Shrink Left</button>
+
+</body>
+</html>
